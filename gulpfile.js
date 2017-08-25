@@ -29,7 +29,7 @@ let gulp = require('gulp'),
     });
 
     gulp.task('clean', function() {
-      del(['.tmp/css/styles.css', '.tmp/js/app.js', '.tmp/index.html']);
+      del(['.tmp/css/*.css', '.tmp/js/*.js', '.tmp/index.html']);
     });
 
     gulp.task('cleanBuild', function() {
@@ -42,14 +42,14 @@ let gulp = require('gulp'),
     });
 
     gulp.task('minifyJS', function() {
-      gulp.src('.tmp/js/app.min.js', {base: '.tmp'})
+      gulp.src('.tmp/js/app.js', {base: '.tmp'})
           .pipe(wait(1000))
           .pipe(uglify())
           .pipe(gulp.dest('dist'));
     });
 
     gulp.task('minify', ['minifyJS'], function() {
-      gulp.src('.tmp/css/styles.min.css', {base: '.tmp'})
+      gulp.src('.tmp/css/styles.css', {base: '.tmp'})
           .pipe(wait(1000))
           .pipe(cleanCSS({compatibility: '*'}))
           .pipe(gulp.dest('dist'))

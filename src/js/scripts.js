@@ -1,4 +1,10 @@
 const lazyModals = document.getElementsByClassName('mod');
+const photo4 = document.getElementById('photo4');
+const photo5 = document.getElementById('photo5');
+const photo6 = document.getElementById('photo6');
+const photo7 = document.getElementById('photo7');
+const photo8 = document.getElementById('photo8');
+const photo9 = document.getElementById('photo9');
 
 function lazyModal_1() {
       lazyModals[0].classList.add('loaded');
@@ -53,3 +59,12 @@ function lazyModal_9() {
       lazyModals[8].setAttribute('src', 'img/photos/photo9-lg.jpg');
       lazyModals[8].setAttribute('data-was-processed', "true");
     }
+
+    document.addEventListener('scroll', function() {
+      photo4.setAttribute('src', 'img/photos/photo4-sm.jpg');
+      photo5.setAttribute('src', 'img/photos/photo5-sm.jpg');
+      photo6.setAttribute('src', 'img/photos/photo6-sm.jpg');
+      photo7.setAttribute('src', 'img/photos/photo7-sm.jpg');
+      photo8.setAttribute('src', 'img/photos/photo8-sm.jpg');
+      photo9.setAttribute('src', 'img/photos/photo9-sm.jpg');
+    });
